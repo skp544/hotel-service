@@ -1,0 +1,15 @@
+import { AsyncLocalStorage } from "node:async_hooks";
+
+type AsyncLocalStorageType = {
+  correlationId: string;
+};
+
+export const asyncLocalStorage = new AsyncLocalStorage<AsyncLocalStorageType>(); // create a new instance of AsyncLocalStorage
+
+export const getCorrelationId = () => {
+  const asyncStore = asyncLocalStorage.getStore();
+
+  return (
+    asyncStore?.correlationId || "unknown-error-while-creating-correlation-id"
+  );
+};
