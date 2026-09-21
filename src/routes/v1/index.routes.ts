@@ -1,8 +1,11 @@
 import express from "express";
 import pingRouter from "./ping.routes.js";
+import hotelRouter from "./hotel.routes.js";
 
 const v1Router = express.Router();
 
 v1Router.use("/ping", pingRouter);
+
+v1Router.use("/hotels", hotelRouter);
 
 export default v1Router;
