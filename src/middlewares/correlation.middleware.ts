@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 import { asyncLocalStorage } from "../utils/helpers/request.helper.js";
 
 export const attachCorrelationIdMiddleware = (
-  req: Request,
+  _req: Request,
   res: Response,
   next: NextFunction,
 ) => {
